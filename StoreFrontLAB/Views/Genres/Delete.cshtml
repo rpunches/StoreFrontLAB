@@ -1,0 +1,33 @@
+﻿@model SFL.DATA.EF.Genre
+
+@{
+    ViewBag.Title = "Are you sure want to permanently delete ";
+}
+
+<h2>@ViewBag.Title <h1 id="deleteName">@Model.GenreName?</h1></h2>
+
+
+
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.GenreName)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.GenreName)
+    </dd>
+
+</dl>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default deleteBtn" /> <br />
+        <a href=" @Url.Action("Index", "Genres")"><i class="fas fa-long-arrow-alt-left"></i> List of Genres</a>
+    </div>
+}
+
+

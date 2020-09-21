@@ -1,0 +1,47 @@
+﻿@model IEnumerable<SFL.DATA.EF.ProductionCompany>
+
+@{
+    ViewBag.Title = "Production Companies";
+}
+
+<h2>@ViewBag.Title</h2>
+<hr />
+<h3 id="backHeader">
+    <a href=" @Url.Action("Index", "Movies")"><i class="fas fa-long-arrow-alt-left"></i> List of Movies</a>
+</h3>
+@if (User.IsInRole("Admin"))
+{
+    <h3 id="createHeader">
+        <a href=" @Url.Action("Create", "ProductionCompanies")"><i class="fas fa-plus"></i> Production Company</a>
+    </h3>
+}
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3">
+            <div style="margin: .3em; padding .1em; border-radius: 5px; min-width: 250px; text-align: center; max-width: fit-content;">
+                <dl class="dl-horizontal">
+                    <dd>
+                        <a href="@Url.Action("Details", new { id = item.ProductionID})" title="@item.ProductionCompany1">
+                            <img src="~/Content/images/prodCoPlaceholder.png" alt="@item.ProductionCompany1" style="max-width: 150px;" />
+
+                    <dd><strong>@Html.DisplayFor(modelItem => item.ProductionCompany1)</strong></dd>
+                    </a>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <dd>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ProductionID }) |
+                            @*@Html.ActionLink("Details", "Details", new { id = item.ProductionID }) |*@
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ProductionID })
+                        </dd>
+                    }
+                    </dd>
+
+                </dl>
+
+            </div>
+        </div>
+
+    }
+</div>

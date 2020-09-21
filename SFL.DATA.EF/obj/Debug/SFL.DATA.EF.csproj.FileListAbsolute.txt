@@ -1,0 +1,24 @@
+C:\Users\student\source\repos\StoreFrontLAB\SFL.DATA.EF\bin\Debug\SFL.DATA.EF.dll.config
+C:\Users\student\source\repos\StoreFrontLAB\SFL.DATA.EF\bin\Debug\SFL.DATA.EF.dll
+C:\Users\student\source\repos\StoreFrontLAB\SFL.DATA.EF\bin\Debug\SFL.DATA.EF.pdb
+C:\Users\student\source\repos\StoreFrontLAB\SFL.DATA.EF\bin\Debug\EntityFramework.dll
+C:\Users\student\source\repos\StoreFrontLAB\SFL.DATA.EF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\student\source\repos\StoreFrontLAB\SFL.DATA.EF\bin\Debug\EntityFramework.xml
+C:\Users\student\source\repos\StoreFrontLAB\SFL.DATA.EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\student\source\repos\StoreFrontLAB\SFL.DATA.EF\obj\Debug\SFL.DATA.EF.csprojAssemblyReference.cache
+C:\Users\student\source\repos\StoreFrontLAB\SFL.DATA.EF\obj\Debug\SFL.DATA.EF.csproj.CoreCompileInputs.cache
+C:\Users\student\source\repos\StoreFrontLAB\SFL.DATA.EF\obj\Debug\SFL.DATA.EF.csproj.CopyComplete
+C:\Users\student\source\repos\StoreFrontLAB\SFL.DATA.EF\obj\Debug\SFL.DATA.EF.dll
+C:\Users\student\source\repos\StoreFrontLAB\SFL.DATA.EF\obj\Debug\SFL.DATA.EF.pdb
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\SFL.DATA.EF\bin\Debug\SFL.DATA.EF.dll.config
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\SFL.DATA.EF\bin\Debug\SFL.DATA.EF.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\SFL.DATA.EF\bin\Debug\SFL.DATA.EF.pdb
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\SFL.DATA.EF\bin\Debug\EntityFramework.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\SFL.DATA.EF\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\SFL.DATA.EF\bin\Debug\EntityFramework.xml
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\SFL.DATA.EF\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\SFL.DATA.EF\obj\Debug\SFL.DATA.EF.csprojAssemblyReference.cache
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\SFL.DATA.EF\obj\Debug\SFL.DATA.EF.csproj.CoreCompileInputs.cache
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\SFL.DATA.EF\obj\Debug\SFL.DATA.EF.csproj.CopyComplete
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\SFL.DATA.EF\obj\Debug\SFL.DATA.EF.dll
+C:\Users\student\Documents\Visual Studio 2017\Projects\StoreFrontLAB\SFL.DATA.EF\obj\Debug\SFL.DATA.EF.pdb

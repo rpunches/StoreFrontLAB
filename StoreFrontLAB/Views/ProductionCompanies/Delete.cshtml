@@ -1,0 +1,33 @@
+﻿@model SFL.DATA.EF.ProductionCompany
+
+@{
+    ViewBag.Title = "Are you sure want to permanently delete ";
+}
+
+<h2>@ViewBag.Title <h1 id="deleteName">@Model.ProductionCompany1?</h1></h2>
+
+
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.ProductionCompany1)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ProductionCompany1)
+    </dd>
+
+</dl>
+
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default deleteBtn" /> <br />
+        <a href=" @Url.Action("Index", "ProductionCompanies")"><i class="fas fa-long-arrow-alt-left"></i> List of Production Companies</a>
+    </div>
+    }
+

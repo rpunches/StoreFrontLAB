@@ -1,0 +1,38 @@
+﻿@model SFL.DATA.EF.Actor
+
+@{
+    ViewBag.Title = "Edit " + Model.ActorFullName;
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ActorID)
+
+            @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2 editLabel" })
+                @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+
+            @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2 editLabel" })
+                @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default createBtn" />
+            </div>
+    </div>
+}
+
+    <div>
+        <a href=" @Url.Action("Index", "Actors")"><i class="fas fa-long-arrow-alt-left"></i> List of Actors</a>
+    </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

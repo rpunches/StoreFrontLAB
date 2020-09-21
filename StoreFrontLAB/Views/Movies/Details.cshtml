@@ -1,0 +1,94 @@
+﻿@model SFL.DATA.EF.Movie
+
+@{
+    ViewBag.Title = @Model.MovieTitle + " Details";
+}
+
+@*<h2>@ViewBag.Title</h2>*@
+
+<div id="mContainer">
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-1 col-sm-6 d-flex justify-content-center">
+            <img src="~/Content/images/posters/@Model.PosterImage" alt="@Model.MovieTitle" class="img-fluid" style="min-width:100%;"/>
+        </div>
+        <div class="col">
+            <p><span class="detailsTitle">@Html.DisplayFor(model => model.MovieTitle)</span> @*(@Html.DisplayFor(model => model.ReleaseDate)*@ @Convert.ToString(string.Format("({0:yyyy})", Model.ReleaseDate))</p>
+            <p>
+                @*@Html.DisplayNameFor(model => model.Genre.GenreName)*@
+                @Html.DisplayFor(model => model.Genre.GenreName)
+            </p>
+            <p>
+                @*@Html.DisplayNameFor(model => model.ProductionCompany.ProductionCompany1)*@
+                @Html.DisplayFor(model => model.ProductionCompany.ProductionCompany1)
+            </p>
+            @*<p>Director</p>
+                <p>Actors</p>*@
+
+            <p>
+                @*<strong> @Html.DisplayNameFor(model => model.Plot)</strong>*@<br />
+                <em> @Html.DisplayFor(model => model.Plot)</em>
+            </p>
+
+
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div id="divCart">
+        <p id="moviePrice">
+
+            <strong> @Html.DisplayFor(model => model.Price)</strong>
+        </p>
+    </div>
+    <hr style="margin: 1em 0;" />
+    @if (User.IsInRole("Admin"))
+    {
+        <div id="adminView">
+            <p>
+                <strong>@Html.DisplayNameFor(model => model.UnitsSold):</strong>
+                @Html.DisplayFor(model => model.UnitsSold)
+            </p>
+        </div>
+    }
+
+    <div id="divCart">
+        <p style="font-size: 1.25em;">
+            @*@Html.DisplayNameFor(model => model.Price)*@
+            @using (@Html.BeginForm("AddToCart", "Movies", FormMethod.Post, new { @class = "text-right" }))
+            {
+                @Html.HiddenFor(x => x.MovieID) //passing products PK value for add to cart
+                <span class="label">Quantity</span>
+                @Html.TextBox("Qty", 1, new { @class = "form-control", @style = "max-width: 50px; display:inline; text-align: center;" })
+                <button type="submit" class="btn " id="cartBtn">Add to Cart <i class="fa fa-shopping-cart"></i></button>
+            }
+        </p>
+
+    </div>
+    <div class="clearfix"></div>
+
+    <div id="mFooterLeft"> <a href=" @Url.Action("Index", "Movies")"><i class="fas fa-long-arrow-alt-left"></i> List of Movies</a></div>
+    @if (User.IsInRole("Admin"))
+    {
+        <div id="mFooterRight">
+            <i class="fas fa-edit"></i> @Html.ActionLink("Edit", "Edit", new { id = Model.MovieID })
+
+        </div>}
+
+    <div class="clearfix"></div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

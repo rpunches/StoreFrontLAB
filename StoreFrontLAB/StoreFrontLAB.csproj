@@ -1,0 +1,651 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C0C4CF5F-0053-4235-A756-A0AFC74B3324}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>StoreFrontLAB</RootNamespace>
+    <AssemblyName>StoreFrontLAB</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.2\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.2\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.2\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin">
+      <HintPath>..\packages\Microsoft.Owin.4.0.0\lib\net451\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.0.0\lib\net451\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security">
+      <HintPath>..\packages\Microsoft.Owin.Security.4.0.0\lib\net451\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Facebook.4.0.0\lib\net451\Microsoft.Owin.Security.Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.4.0.0\lib\net451\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Google">
+      <HintPath>..\packages\Microsoft.Owin.Security.Google.4.0.0\lib\net451\Microsoft.Owin.Security.Google.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Twitter">
+      <HintPath>..\packages\Microsoft.Owin.Security.Twitter.4.0.0\lib\net451\Microsoft.Owin.Security.Twitter.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.MicrosoftAccount">
+      <HintPath>..\packages\Microsoft.Owin.Security.MicrosoftAccount.4.0.0\lib\net451\Microsoft.Owin.Security.MicrosoftAccount.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.0\lib\net451\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ActorsController.cs" />
+    <Compile Include="Controllers\DirectorsController.cs" />
+    <Compile Include="Controllers\GenreFilterController.cs" />
+    <Compile Include="Controllers\GenresController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MoviesController.cs" />
+    <Compile Include="Controllers\ProductionCompaniesController.cs" />
+    <Compile Include="Controllers\RolesAdminController.cs" />
+    <Compile Include="Controllers\ShoppingCartController.cs" />
+    <Compile Include="Controllers\StronglyTypedDataController.cs" />
+    <Compile Include="Controllers\UserAdminController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\AdminViewModel.cs" />
+    <Compile Include="Models\ContactViewModel.cs" />
+    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ShoppingCartViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\assets\css\bootstrap.min.css" />
+    <Content Include="Content\assets\css\fontawesome-all.min.css" />
+    <Content Include="Content\assets\css\main.css" />
+    <Content Include="Content\assets\css\noscript.css" />
+    <Content Include="Content\assets\favicon_io_film\android-chrome-192x192.png" />
+    <Content Include="Content\assets\favicon_io_film\android-chrome-512x512.png" />
+    <Content Include="Content\assets\favicon_io_film\apple-touch-icon.png" />
+    <Content Include="Content\assets\favicon_io_film\favicon-16x16.png" />
+    <Content Include="Content\assets\favicon_io_film\favicon-32x32.png" />
+    <Content Include="Content\assets\favicon_io_film\favicon.ico" />
+    <Content Include="Content\assets\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\assets\js\breakpoints.min.js" />
+    <Content Include="Content\assets\js\browser.min.js" />
+    <Content Include="Content\assets\js\jquery.min.js" />
+    <Content Include="Content\assets\js\main.js" />
+    <Content Include="Content\assets\js\util.js" />
+    <Content Include="Content\assets\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\assets\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\assets\webfonts\fa-solid-900.svg" />
+    <Content Include="Content\CustomStyles.css" />
+    <Content Include="Content\images\actorPlaceholder.png" />
+    <Content Include="Content\images\genrecards\actioncard.jpg" />
+    <Content Include="Content\images\genrecards\adventurecard.jpg" />
+    <Content Include="Content\images\genrecards\animationcard.jpg" />
+    <Content Include="Content\images\genrecards\comedycard.jpg" />
+    <Content Include="Content\images\genrecards\crimecard.jpg" />
+    <Content Include="Content\images\genrecards\dramacard.jpg" />
+    <Content Include="Content\images\genrecards\fantasycard.jpg" />
+    <Content Include="Content\images\genrecards\horrorcard.jpg" />
+    <Content Include="Content\images\genrecards\mysterycard.jpg" />
+    <Content Include="Content\images\genrecards\romancecard.jpg" />
+    <Content Include="Content\images\genrecards\scifiCard.jpg" />
+    <Content Include="Content\images\genrecards\thrillercard.jpg" />
+    <Content Include="Content\images\icons\action.png" />
+    <Content Include="Content\images\icons\adventure.png" />
+    <Content Include="Content\images\icons\animation.png" />
+    <Content Include="Content\images\icons\comedy.png" />
+    <Content Include="Content\images\icons\crime.png" />
+    <Content Include="Content\images\icons\drama.png" />
+    <Content Include="Content\images\icons\fantasy.png" />
+    <Content Include="Content\images\icons\horror.png" />
+    <Content Include="Content\images\icons\mystery.png" />
+    <Content Include="Content\images\icons\romance.png" />
+    <Content Include="Content\images\icons\scifi.png" />
+    <Content Include="Content\images\icons\thriller.png" />
+    <Content Include="Content\images\logo.svg" />
+    <Content Include="Content\images\menuClose.png" />
+    <Content Include="Content\images\menuOpen.png" />
+    <Content Include="Content\images\msBG.jpg" />
+    <Content Include="Content\images\pic01.jpg" />
+    <Content Include="Content\images\pic02.jpg" />
+    <Content Include="Content\images\pic03.jpg" />
+    <Content Include="Content\images\pic04.jpg" />
+    <Content Include="Content\images\pic05.jpg" />
+    <Content Include="Content\images\pic06.jpg" />
+    <Content Include="Content\images\pic07.jpg" />
+    <Content Include="Content\images\pic08.jpg" />
+    <Content Include="Content\images\pic09.jpg" />
+    <Content Include="Content\images\pic10.jpg" />
+    <Content Include="Content\images\pic11.jpg" />
+    <Content Include="Content\images\pic12.jpg" />
+    <Content Include="Content\images\pic13.jpg" />
+    <Content Include="Content\images\pic14.jpg" />
+    <Content Include="Content\images\pic15.jpg" />
+    <Content Include="Content\images\pocornBW.jpg" />
+    <Content Include="Content\images\posters\12Years.jpg" />
+    <Content Include="Content\images\posters\13Hours.jpg" />
+    <Content Include="Content\images\posters\25thHour.jpg" />
+    <Content Include="Content\images\posters\300.jpg" />
+    <Content Include="Content\images\posters\Adaptation.jpg" />
+    <Content Include="Content\images\posters\AgeOfUltron.jpg" />
+    <Content Include="Content\images\posters\Alien.jpg" />
+    <Content Include="Content\images\posters\Aliens.jpg" />
+    <Content Include="Content\images\posters\AmericanBeauty.jpg" />
+    <Content Include="Content\images\posters\Anchorman.jpg" />
+    <Content Include="Content\images\posters\AnyGivenSunday.jpg" />
+    <Content Include="Content\images\posters\Apollo13.jpg" />
+    <Content Include="Content\images\posters\Aquaman.jpg" />
+    <Content Include="Content\images\posters\Armageddon.jpg" />
+    <Content Include="Content\images\posters\Avengers.jpg" />
+    <Content Include="Content\images\posters\BackToFuture.jpg" />
+    <Content Include="Content\images\posters\BadBoys.jpg" />
+    <Content Include="Content\images\posters\BadBoys2.jpg" />
+    <Content Include="Content\images\posters\Batman.jpg" />
+    <Content Include="Content\images\posters\BatmanReturns.jpg" />
+    <Content Include="Content\images\posters\BeautifulMind.jpg" />
+    <Content Include="Content\images\posters\Beguiled.jpg" />
+    <Content Include="Content\images\posters\BeingJohn.jpg" />
+    <Content Include="Content\images\posters\BigFish.jpg" />
+    <Content Include="Content\images\posters\BlackPanther.jpg" />
+    <Content Include="Content\images\posters\BlackSwan.jpg" />
+    <Content Include="Content\images\posters\BrokebackMountain.jpg" />
+    <Content Include="Content\images\posters\CAFirstAvenger.jpg" />
+    <Content Include="Content\images\posters\CAWinterSoldier.jpg" />
+    <Content Include="Content\images\posters\Cloverfield.jpg" />
+    <Content Include="Content\images\posters\DazedConfused.jpg" />
+    <Content Include="Content\images\posters\Departed.jpg" />
+    <Content Include="Content\images\posters\EdgeOfTomorrow.jpg" />
+    <Content Include="Content\images\posters\Endgame.jpg" />
+    <Content Include="Content\images\posters\ET.jpg" />
+    <Content Include="Content\images\posters\FourBrothers.jpg" />
+    <Content Include="Content\images\posters\FridayNightLights.jpg" />
+    <Content Include="Content\images\posters\FrostNixon.jpg" />
+    <Content Include="Content\images\posters\GetOut.jpg" />
+    <Content Include="Content\images\posters\Gladiator.jpg" />
+    <Content Include="Content\images\posters\GodsfordPark.jpg" />
+    <Content Include="Content\images\posters\Gravity.jpg" />
+    <Content Include="Content\images\posters\Hancock.jpg" />
+    <Content Include="Content\images\posters\Hellboy.jpg" />
+    <Content Include="Content\images\posters\Hellboy2.jpg" />
+    <Content Include="Content\images\posters\HurtLocker.jpg" />
+    <Content Include="Content\images\posters\IJLastCrusade.jpg" />
+    <Content Include="Content\images\posters\IJLostArk.jpg" />
+    <Content Include="Content\images\posters\IJTempleDoom.jpg" />
+    <Content Include="Content\images\posters\Inception.jpg" />
+    <Content Include="Content\images\posters\InfinityWar.jpg" />
+    <Content Include="Content\images\posters\IronMan.jpg" />
+    <Content Include="Content\images\posters\IronMan2.jpg" />
+    <Content Include="Content\images\posters\JurassicPark.jpg" />
+    <Content Include="Content\images\posters\JusticeLeague.jpg" />
+    <Content Include="Content\images\posters\KingArthur.jpg" />
+    <Content Include="Content\images\posters\Kingdom.jpg" />
+    <Content Include="Content\images\posters\Logan.jpg" />
+    <Content Include="Content\images\posters\LoneSurvivor.jpg" />
+    <Content Include="Content\images\posters\LORFellowship.jpg" />
+    <Content Include="Content\images\posters\LORReturnOfKing.jpg" />
+    <Content Include="Content\images\posters\LORTwoTowers.jpg" />
+    <Content Include="Content\images\posters\LostInTranslation.jpg" />
+    <Content Include="Content\images\posters\MagicMike.jpg" />
+    <Content Include="Content\images\posters\ManOnFire.jpg" />
+    <Content Include="Content\images\posters\Mile22.jpg" />
+    <Content Include="Content\images\posters\MrMrsSmith.jpg" />
+    <Content Include="Content\images\posters\MulhollandDr.jpg" />
+    <Content Include="Content\images\posters\NewtonBoys.jpg" />
+    <Content Include="Content\images\posters\Oceans11.jpg" />
+    <Content Include="Content\images\posters\Oceans12.jpg" />
+    <Content Include="Content\images\posters\Oceans13.jpg" />
+    <Content Include="Content\images\posters\OtherGuys.jpg" />
+    <Content Include="Content\images\posters\PacificRim.jpg" />
+    <Content Include="Content\images\posters\PatriotsDay.jpg" />
+    <Content Include="Content\images\posters\PointBreak.jpg" />
+    <Content Include="Content\images\posters\PrivateRyan.jpg" />
+    <Content Include="Content\images\posters\PulpFiction.jpg" />
+    <Content Include="Content\images\posters\Ransom.jpg" />
+    <Content Include="Content\images\posters\RoadToPerdition.jpg" />
+    <Content Include="Content\images\posters\Saw.jpg" />
+    <Content Include="Content\images\posters\Se7en.jpg" />
+    <Content Include="Content\images\posters\Selma.jpg" />
+    <Content Include="Content\images\posters\ShaunDead.jpg" />
+    <Content Include="Content\images\posters\SherlockHolmes.jpg" />
+    <Content Include="Content\images\posters\SHGameShadows.jpg" />
+    <Content Include="Content\images\posters\SleepyHollow.jpg" />
+    <Content Include="Content\images\posters\Snatch.jpg" />
+    <Content Include="Content\images\posters\StarTrek.jpg" />
+    <Content Include="Content\images\posters\StarWars4.jpg" />
+    <Content Include="Content\images\posters\StarWars5.jpg" />
+    <Content Include="Content\images\posters\StarWars6.jpg" />
+    <Content Include="Content\images\posters\STBeyond.jpg" />
+    <Content Include="Content\images\posters\STDarkness.jpg" />
+    <Content Include="Content\images\posters\StepBrothers.jpg" />
+    <Content Include="Content\images\posters\Super8.jpg" />
+    <Content Include="Content\images\posters\Swingers.jpg" />
+    <Content Include="Content\images\posters\TheRock.jpg" />
+    <Content Include="Content\images\posters\TheShining.jpg" />
+    <Content Include="Content\images\posters\ThinRedLine.jpg" />
+    <Content Include="Content\images\posters\Thor.jpg" />
+    <Content Include="Content\images\posters\Transformers.jpg" />
+    <Content Include="Content\images\posters\Unforgiven.jpg" />
+    <Content Include="Content\images\posters\Us.jpg" />
+    <Content Include="Content\images\posters\WallStreet.jpg" />
+    <Content Include="Content\images\posters\WallStreet2.jpg" />
+    <Content Include="Content\images\posters\Watchmen.jpg" />
+    <Content Include="Content\images\posters\Wolverine.jpg" />
+    <Content Include="Content\images\posters\WonderWoman.jpg" />
+    <Content Include="Content\images\posters\Wrestler.jpg" />
+    <Content Include="Content\images\posters\WrinkleInTime.jpg" />
+    <Content Include="Content\images\posters\Yuma.jpg" />
+    <Content Include="Content\images\posters\ZeroDarkThirty.jpg" />
+    <Content Include="Content\images\prodCoPlaceholder.png" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="_archive\StorefrontTemplate\assets\css\fontawesome-all.min.css" />
+    <Content Include="_archive\StorefrontTemplate\assets\css\main.css" />
+    <Content Include="_archive\StorefrontTemplate\assets\css\noscript.css" />
+    <Content Include="_archive\StorefrontTemplate\assets\js\breakpoints.min.js" />
+    <Content Include="_archive\StorefrontTemplate\assets\js\browser.min.js" />
+    <Content Include="_archive\StorefrontTemplate\assets\js\jquery.min.js" />
+    <Content Include="_archive\StorefrontTemplate\assets\js\main.js" />
+    <Content Include="_archive\StorefrontTemplate\assets\js\util.js" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-brands-400.svg" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-regular-400.svg" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-solid-900.svg" />
+    <Content Include="_archive\StorefrontTemplate\elements.html" />
+    <Content Include="_archive\StorefrontTemplate\generic.html" />
+    <Content Include="_archive\StorefrontTemplate\images\logo.svg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic01.jpg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic02.jpg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic03.jpg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic04.jpg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic05.jpg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic06.jpg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic07.jpg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic08.jpg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic09.jpg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic10.jpg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic11.jpg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic12.jpg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic13.jpg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic14.jpg" />
+    <Content Include="_archive\StorefrontTemplate\images\pic15.jpg" />
+    <Content Include="_archive\StorefrontTemplate\index.html" />
+    <Content Include="_archive\StorefrontTemplate\LICENSE.txt" />
+    <Content Include="_archive\StorefrontTemplate\README.txt" />
+    <Content Include="Content\assets\sass\base\_page.scss" />
+    <Content Include="Content\assets\sass\base\_reset.scss" />
+    <Content Include="Content\assets\sass\base\_typography.scss" />
+    <Content Include="Content\assets\sass\components\_actions.scss" />
+    <Content Include="Content\assets\sass\components\_box.scss" />
+    <Content Include="Content\assets\sass\components\_button.scss" />
+    <Content Include="Content\assets\sass\components\_form.scss" />
+    <Content Include="Content\assets\sass\components\_icon.scss" />
+    <Content Include="Content\assets\sass\components\_icons.scss" />
+    <Content Include="Content\assets\sass\components\_image.scss" />
+    <Content Include="Content\assets\sass\components\_list.scss" />
+    <Content Include="Content\assets\sass\components\_row.scss" />
+    <Content Include="Content\assets\sass\components\_section.scss" />
+    <Content Include="Content\assets\sass\components\_table.scss" />
+    <Content Include="Content\assets\sass\components\_tiles.scss" />
+    <Content Include="Content\assets\sass\layout\_footer.scss" />
+    <Content Include="Content\assets\sass\layout\_header.scss" />
+    <Content Include="Content\assets\sass\layout\_main.scss" />
+    <Content Include="Content\assets\sass\layout\_menu.scss" />
+    <Content Include="Content\assets\sass\layout\_wrapper.scss" />
+    <Content Include="Content\assets\sass\libs\_breakpoints.scss" />
+    <Content Include="Content\assets\sass\libs\_functions.scss" />
+    <Content Include="Content\assets\sass\libs\_html-grid.scss" />
+    <Content Include="Content\assets\sass\libs\_mixins.scss" />
+    <Content Include="Content\assets\sass\libs\_vars.scss" />
+    <Content Include="Content\assets\sass\libs\_vendor.scss" />
+    <Content Include="Content\assets\sass\main.scss" />
+    <Content Include="Content\assets\sass\noscript.scss" />
+    <Content Include="Content\assets\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\assets\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\assets\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\assets\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\assets\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\assets\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\assets\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\assets\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\assets\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\assets\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\assets\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\assets\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\assets\favicon_io_film\site.webmanifest" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_OriginalLayout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\OldContact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
+    <Content Include="Views\Account\ConfirmEmail.cshtml" />
+    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
+    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
+    <Content Include="Views\Account\ForgotPassword.cshtml" />
+    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Account\Register.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Account\SendCode.cshtml" />
+    <Content Include="Views\Account\VerifyCode.cshtml" />
+    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
+    <Content Include="Views\Manage\ChangePassword.cshtml" />
+    <Content Include="Views\Manage\Index.cshtml" />
+    <Content Include="Views\Manage\ManageLogins.cshtml" />
+    <Content Include="Views\Manage\SetPassword.cshtml" />
+    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
+    <Content Include="Views\Shared\Lockout.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\UsersAdmin\Index.cshtml" />
+    <Content Include="Views\UsersAdmin\Edit.cshtml" />
+    <Content Include="Views\UsersAdmin\Details.cshtml" />
+    <Content Include="Views\UsersAdmin\Delete.cshtml" />
+    <Content Include="Views\UsersAdmin\Create.cshtml" />
+    <Content Include="Views\RolesAdmin\Index.cshtml" />
+    <Content Include="Views\RolesAdmin\Edit.cshtml" />
+    <Content Include="Views\RolesAdmin\Details.cshtml" />
+    <Content Include="Views\RolesAdmin\Delete.cshtml" />
+    <Content Include="Views\RolesAdmin\Create.cshtml" />
+    <Content Include="Views\Account\DisplayEmail.cshtml" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\base\_page.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\base\_reset.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\base\_typography.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\components\_actions.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\components\_box.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\components\_button.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\components\_form.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\components\_icon.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\components\_icons.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\components\_image.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\components\_list.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\components\_row.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\components\_section.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\components\_table.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\components\_tiles.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\layout\_footer.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\layout\_header.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\layout\_main.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\layout\_menu.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\layout\_wrapper.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\libs\_breakpoints.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\libs\_functions.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\libs\_html-grid.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\libs\_mixins.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\libs\_vars.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\libs\_vendor.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\main.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\sass\noscript.scss" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-brands-400.eot" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-brands-400.ttf" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-brands-400.woff" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-brands-400.woff2" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-regular-400.eot" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-regular-400.ttf" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-regular-400.woff" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-regular-400.woff2" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-solid-900.eot" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-solid-900.ttf" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-solid-900.woff" />
+    <Content Include="_archive\StorefrontTemplate\assets\webfonts\fa-solid-900.woff2" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\EmailConfirmation.cshtml" />
+    <Content Include="Views\Actors\Create.cshtml" />
+    <Content Include="Views\Actors\Delete.cshtml" />
+    <Content Include="Views\Actors\Details.cshtml" />
+    <Content Include="Views\Actors\Edit.cshtml" />
+    <Content Include="Views\Actors\Index.cshtml" />
+    <Content Include="Views\Directors\Create.cshtml" />
+    <Content Include="Views\Directors\Delete.cshtml" />
+    <Content Include="Views\Directors\Details.cshtml" />
+    <Content Include="Views\Directors\Edit.cshtml" />
+    <Content Include="Views\Directors\Index.cshtml" />
+    <Content Include="Views\Genres\Create.cshtml" />
+    <Content Include="Views\Genres\Delete.cshtml" />
+    <Content Include="Views\Genres\Details.cshtml" />
+    <Content Include="Views\Genres\Edit.cshtml" />
+    <Content Include="Views\Genres\Index.cshtml" />
+    <Content Include="Views\Movies\Create.cshtml" />
+    <Content Include="Views\Movies\Delete.cshtml" />
+    <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Movies\Edit.cshtml" />
+    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\ProductionCompanies\Create.cshtml" />
+    <Content Include="Views\ProductionCompanies\Delete.cshtml" />
+    <Content Include="Views\ProductionCompanies\Details.cshtml" />
+    <Content Include="Views\ProductionCompanies\Edit.cshtml" />
+    <Content Include="Views\ProductionCompanies\Index.cshtml" />
+    <Content Include="Views\Movies\SearchMovies.cshtml" />
+    <Content Include="Views\ShoppingCart\Index.cshtml" />
+    <Content Include="Views\GenreFilter\GenreFilterResults.cshtml" />
+    <Content Include="Views\Home\Index2.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SFL.DATA.EF\SFL.DATA.EF.csproj">
+      <Project>{c7acbaa3-02cb-4964-af80-f3b72f701d87}</Project>
+      <Name>SFL.DATA.EF</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>61849</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:61849/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

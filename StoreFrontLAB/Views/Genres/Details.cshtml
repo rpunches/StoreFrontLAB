@@ -1,0 +1,29 @@
+﻿@model SFL.DATA.EF.Genre
+
+@{
+    ViewBag.Title = Model.GenreName;
+}
+
+<h2>@ViewBag.Title</h2>
+
+<div>
+    <h4>Genre</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.GenreName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GenreName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @if (User.IsInRole("Admin"))
+    {
+    <i class="fas fa-edit"></i>  @Html.ActionLink("Edit", "Edit", new { id = Model.GenreID })
+    } <br />
+    <a href=" @Url.Action("Index", "Genres")"><i class="fas fa-long-arrow-alt-left"></i> List of Genres</a>
+</p>

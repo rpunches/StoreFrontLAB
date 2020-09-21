@@ -1,0 +1,60 @@
+﻿@model SFL.DATA.EF.Movie
+
+@{
+    ViewBag.Title = "Are you sure want to permanently delete ";
+}
+
+<h2>@ViewBag.Title <h1 id="deleteName">@Model.MovieTitle?</h1></h2>
+<hr />
+
+
+<div id="mContainer">
+
+    @*<div class="row">*@
+    <div class="mLeft">
+        <p><img src="~/Content/images/posters/@Model.PosterImage" alt="@Model.MovieTitle" style="width: 275px;" /></p>
+    </div>
+    <div class="mRight">
+        <p><span class="detailsTitle">@Html.DisplayFor(model => model.MovieTitle)</span> @*(@Html.DisplayFor(model => model.ReleaseDate)*@ @Convert.ToString(string.Format("({0:yyyy})", Model.ReleaseDate))</p>
+
+
+        <p>
+            @*@Html.DisplayNameFor(model => model.Genre.GenreName)*@
+            @Html.DisplayFor(model => model.Genre.GenreName)
+        </p>
+        <p>
+            @*@Html.DisplayNameFor(model => model.ProductionCompany.ProductionCompany1)*@
+            @Html.DisplayFor(model => model.ProductionCompany.ProductionCompany1)
+        </p>
+        <p>Directors</p>
+        <p>Cast</p>
+
+        <p>
+            @*<strong> @Html.DisplayNameFor(model => model.Plot)</strong>*@<br />
+            <em> @Html.DisplayFor(model => model.Plot)</em>
+        </p>
+
+
+        @*</div>*@
+    </div>
+
+    <div id="divCart">
+        <p id="moviePrice">
+
+            <strong> @Html.DisplayFor(model => model.Price)</strong>
+        </p>
+    </div>
+</div>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Delete" class="btn btn-default deleteBtn" /> <br />
+        <a href=" @Url.Action("Index", "Movies")"><i class="fas fa-long-arrow-alt-left"></i> List of Movies</a>
+    </div>
+}
+
+

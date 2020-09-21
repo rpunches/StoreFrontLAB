@@ -1,0 +1,62 @@
+﻿@model SFL.DATA.EF.Movie
+
+@{
+    ViewBag.Title = "Edit " + @Model.MovieTitle;
+}
+
+<div id="crudHeader"><h2>@ViewBag.Title</h2></div>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MovieID)
+
+            @Html.LabelFor(model => model.MovieTitle, htmlAttributes: new { @class = "control-label col-md-2 editLabel" })
+                @Html.EditorFor(model => model.MovieTitle, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MovieTitle, "", new { @class = "text-danger" })
+
+            @Html.LabelFor(model => model.GenreID, "Genre", htmlAttributes: new { @class = "control-label col-md-2 editLabel" })
+                @Html.DropDownList("GenreID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.GenreID, "", new { @class = "text-danger" })
+
+            @Html.LabelFor(model => model.Price, htmlAttributes: new { @class = "control-label col-md-2 editLabel" })
+                @Html.EditorFor(model => model.Price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Price, "", new { @class = "text-danger" })
+
+            @Html.LabelFor(model => model.UnitsSold, htmlAttributes: new { @class = "control-label col-md-2 editLabel" })
+                @Html.EditorFor(model => model.UnitsSold, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.UnitsSold, "", new { @class = "text-danger" })
+
+            @Html.LabelFor(model => model.ReleaseDate, htmlAttributes: new { @class = "control-label col-md-2 editLabel" })
+                @Html.EditorFor(model => model.ReleaseDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ReleaseDate, "", new { @class = "text-danger" })
+
+            @Html.LabelFor(model => model.ProductionID, "Production Company", htmlAttributes: new { @class = "control-label col-md-2 editLabel" })
+                @Html.DropDownList("ProductionID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ProductionID, "", new { @class = "text-danger" })
+
+            @Html.LabelFor(model => model.Plot, htmlAttributes: new { @class = "control-label col-md-2 editLabel" })
+                @Html.EditorFor(model => model.Plot, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Plot, "", new { @class = "text-danger" })
+
+            @Html.LabelFor(model => model.PosterImage, htmlAttributes: new { @class = "control-label col-md-2 editLabel" })
+                @Html.EditorFor(model => model.PosterImage, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PosterImage, "", new { @class = "text-danger" })
+
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default createBtn" />
+            </div>
+        </div>
+}
+
+    <div>
+        <a href=" @Url.Action("Index", "Movies")"><i class="fas fa-long-arrow-alt-left"></i> List of Movies</a>
+    </div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

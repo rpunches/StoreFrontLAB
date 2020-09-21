@@ -1,0 +1,180 @@
+﻿<!DOCTYPE HTML>
+<!--
+    Phantom by HTML5 UP
+    html5up.net | ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+
+    <!-- Site Metas -->
+    <title>@ViewBag.Title</title>
+    <meta name="keywords" content="ecommerce, movies, actors, directors, store, entertainment" />
+    <meta name="description" content="Created to simulate an online store front with a shopping cart. Administrators have the ability to manage product, category and vendor data." />
+    <meta name="author" content="Rachel Punches" />
+
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Content/assets/favicon_io_film/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Content/assets/favicon_io_film/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/assets/favicon_io_film/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Stylesheets -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Condensed|Stoke&display=swap" rel="stylesheet">
+    <link href="~/Content/assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="~/Content/assets/css/noscript.css" /></noscript>
+    <link href="~/Content/CustomStyles.css" rel="stylesheet" />
+
+</head>
+<body class="is-preload" id="popPic">
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <div class="inner">
+
+                <!-- Logo -->
+                @*<a href="index.html" class="logo">
+                        <span class="symbol"><img src="~/Content/images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+                    </a>*@
+
+                <!-- Nav -->
+                <nav>
+                    <ul>
+                        <li><a href="#menu">Menu</a></li>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="@Url.Action("Index", "Home")">Home</a></li>
+                @*<li class="nav-item dropdown">
+
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                @Html.ActionLink("Movies", "Index", "Movies", null, new { @class = "dropdown-item" })
+
+                @Html.ActionLink("Actors", "Index", "Actors", null, new { @class = "dropdown-item" })
+                @Html.ActionLink("Directors", "Index", "Directors", null, new { @class = "dropdown-item" })
+            </div>
+
+        </li>*@
+
+                <li><a href="@Url.Action("Index", "Movies")">Movies</a></li>
+                <li class="smallLi">
+                    <a href="@Url.Action("Index", "Genres")">Genres</a>
+                    <a href="@Url.Action("Index", "Actors")">Actors</a>
+                    <a href="@Url.Action("Index", "Directors")">Directors</a>
+                    <a href="@Url.Action("Index", "ProductionCompanies")">Production Companies</a>
+                </li>
+                <li><a href="@Url.Action("About", "Home")">About Us</a></li>
+                <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
+                @if (Session["cart"] != null)
+                {
+                    <li><a href="@Url.Action("Index", "ShoppingCart")">My Cart <i class="fas fa-shopping-cart"></i></a></li>
+                }
+                else
+                {
+                    <li><a href="@Url.Action("Index", "ShoppingCart")">My Cart <i class="fas fa-shopping-cart"></i></a></li>
+                }
+                @if (User.IsInRole("Admin"))
+                {
+                    <li>
+                        <ul id="partialMenu">
+                            <li class="smallLi">
+                                <a href="@Url.Action("Index", "UsersAdmin")"><i class="fas fa-user-friends"></i> Users Admin</a>
+                                <a href="@Url.Action("Index", "RolesAdmin")"><i class="far fa-address-card"></i> Roles Admin</a>
+                            </li>
+                        </ul>
+                    </li>
+                }
+                <li><strong>@Html.Partial("_LoginPartial")</strong></li>
+
+            </ul>
+        </nav>
+
+        <!-- Main -->
+        <div id="main">
+            <div class="inner">
+                @RenderBody()
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer id="footer">
+            <div class="inner">
+                @*<section>
+                        <h2>Get in touch</h2>
+                        <form method="post" action="#">
+                            <div class="fields">
+                                <div class="field half">
+                                    <input type="text" name="name" id="name" placeholder="Name" />
+                                </div>
+                                <div class="field half">
+                                    <input type="email" name="email" id="email" placeholder="Email" />
+                                </div>
+                                <div class="field">
+                                    <textarea name="message" id="message" placeholder="Message"></textarea>
+                                </div>
+                            </div>
+                            <ul class="actions">
+                                <li><input type="submit" value="Send" class="primary" /></li>
+                            </ul>
+                        </form>
+                    </section>*@
+                @*<section>
+                    <h2>Follow</h2>
+                    <ul class="icons">
+                        <li><a href="#" class="icon brands style2 fa-twitter"><span class="label">Twitter</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-dribbble"><span class="label">Dribbble</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+                        <li><a href="#" class="icon brands style2 fa-500px"><span class="label">500px</span></a></li>
+                        <li><a href="#" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+                        <li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+                    </ul>
+                </section>*@
+                <ul class="copyright">
+                    <li>&copy; Untitled. All rights reserved</li>
+                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                    <li>Modified by Rachel Punches</li>
+                </ul>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+
+    <script src="~/Content/assets/js/jquery.min.js"></script>
+    
+    <script src="~/Content/assets/js/browser.min.js"></script>
+    <script src="~/Content/assets/js/breakpoints.min.js"></script>
+    <script src="~/Content/assets/js/util.js"></script>
+    <script src="~/Content/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/assets/js/main.js"></script>
+    @RenderSection("scripts", required: false)
+
+    <script>
+        $('#navbarDropdown').hover(function () {
+            $(this).find('.dropdown-menu').toggleClass('dropdown');
+        });
+    </script>
+
+</body>
+</html>

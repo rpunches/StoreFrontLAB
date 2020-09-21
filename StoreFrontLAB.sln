@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.779
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StoreFrontLAB", "StoreFrontLAB\StoreFrontLAB.csproj", "{C0C4CF5F-0053-4235-A756-A0AFC74B3324}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SFL.DATA.EF", "SFL.DATA.EF\SFL.DATA.EF.csproj", "{C7ACBAA3-02CB-4964-AF80-F3B72F701D87}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0C4CF5F-0053-4235-A756-A0AFC74B3324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0C4CF5F-0053-4235-A756-A0AFC74B3324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0C4CF5F-0053-4235-A756-A0AFC74B3324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0C4CF5F-0053-4235-A756-A0AFC74B3324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7ACBAA3-02CB-4964-AF80-F3B72F701D87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7ACBAA3-02CB-4964-AF80-F3B72F701D87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7ACBAA3-02CB-4964-AF80-F3B72F701D87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7ACBAA3-02CB-4964-AF80-F3B72F701D87}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1D3C421-AEE5-4A13-BF51-F231EFE741EE}
+	EndGlobalSection
+EndGlobal

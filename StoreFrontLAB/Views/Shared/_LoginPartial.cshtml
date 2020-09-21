@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNet.Identity
+@using SFL.DATA.EF  
+
+@if (Request.IsAuthenticated) {
+    //calculate user's first name if they have a UD record
+    MovieStoreEntities db = new MovieStoreEntities();
+    string userID = User.Identity.GetUserId();
+    UserDetail currentUser = db.UserDetails.Where(ud => ud.UserID == userID).FirstOrDefault();
+    
+
+    // set up variables for "lack of user details" as well as overwriting for users that have deets
+    string username = "Guest";
+
+    if (currentUser != null)
+    {
+        username = currentUser.FirstName;
+    }
+
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" })) {
+        @Html.AntiForgeryToken()
+
+        @*<ul class="nav navbar-nav navbar-right">*@
+<li>
+    @* v1 - original
+        @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })*@
+    @* v2 - added user name *@
+    @Html.ActionLink("Hello " + username + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+
+</li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        @*</ul>*@
+    }
+}
+else {
+    @*<ul class="nav navbar-nav navbar-right">*@
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    @*</ul>*@
+}

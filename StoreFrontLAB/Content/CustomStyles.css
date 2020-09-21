@@ -1,0 +1,357 @@
+﻿body {
+    background-color: black;
+    color: #D5B755; /*#cca014;*/
+    font-family: 'Saira Condensed', sans-serif;
+}
+
+h1 {
+    font-family: 'Stoke', serif;
+}
+
+#popPic {
+    background: url("images/pocornBW.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+#header {
+    padding: 8em 0 0.1em 0;
+}
+
+#backHeader{
+    float:left;
+}
+
+a, dd {
+    color: #88A6A4;
+}
+
+    a:hover {
+        color: #88A6A4;
+        text-decoration: none;
+    }
+
+.icon.style2:hover {
+    color: #88A6A4;
+    border-color: #88A6A4;
+}
+
+#footer {
+    background-color: inherit;
+}
+
+#menu {
+    color: white;
+}
+    #menu > .inner > ul > li a:hover {
+        color: #88A6A4;
+    }
+    #menu > .inner > ul > li.smallLi a{
+        padding: 0.5em 0 0.5em 2em;
+    }
+
+        .nav li {
+            color: #88A6A4;
+        }
+
+.smallLi {
+    font-size: .75em;
+    padding-left: 1em;
+    color: darkgray;
+}
+
+#loginForm {
+    padding: 10%;
+}
+
+#partialMenu {
+    list-style: none;
+}
+
+form {
+    margin: 0;
+}
+
+ul li {
+    padding-left: 0;
+}
+
+.inner .container {
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 50%;
+    box-shadow: 20px 30px 20px 0 rgba(0, 0, 0, .075);
+    padding: 3%;
+}
+
+.centerContent {
+    justify-content: center;
+}
+
+.btn-primary:hover{
+    color:#D5B755;
+    background-color:transparent;
+    border-color:#D5B755;
+}
+.btn-primary:after {
+    color: #D5B755;
+    background-color: transparent;
+    border-color: #D5B755;
+}
+
+/*body #homeBG{
+    background: url("images/msBG.jpg") no-repeat fixed;
+}*/
+
+/*Index Page Tiles*/
+
+.tiles article.style1 > .image:before {
+    background-color: #88A6A4;
+}
+
+.tiles article {
+    width: calc(25% - 2.5em);
+}
+
+@media screen and (max-width: 480px) {
+    .tiles article {
+        width: 100%;
+        margin: 1.25em 0 0 0;
+    }
+}
+
+
+/*.tiles article.style2 > .image:before {
+    background-color: #CCA014;
+}
+.tiles article.style3 > .image:before {
+    background-color: #CCA014;
+}
+.tiles article.style4 > .image:before {
+    background-color: #CCA014;
+}
+.tiles article.style5 > .image:before {
+    background-color: #CCA014;
+}
+.tiles article.style6 > .image:before {
+    background-color: #CCA014;
+}
+.tiles article.style7 > .image:before {
+    background-color: #CCA014;
+}
+.tiles article.style8 > .image:before {
+    background-color: #CCA014;
+}
+.tiles article.style9 > .image:before {
+    background-color: #CCA014;
+}
+.tiles article.style10 > .image:before {
+    background-color: #CCA014;
+}
+.tiles article.style11 > .image:before {
+    background-color: #CCA014;
+}
+.tiles article.style12 > .image:before {
+    background-color: #CCA014;
+}*/
+
+div.iconsGenre img {
+    width: 75%;
+}
+
+.iconsGenre {
+    opacity: .9;
+    margin: -1em;
+}
+
+    .iconsGenre:hover {
+        transition: opacity 0.5s ease;
+        opacity: 0;
+    }
+
+    .iconsGenre:after {
+        transition: opacity 0.5s ease;
+        opacity: .9;
+    }
+
+#posterPic {
+    max-width: 75%;
+}
+
+/*Shopping Cart button*/
+button#cartBtn.btn {
+    font-size: .6em;
+    letter-spacing: 0;
+}
+
+/* Button */
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 4px;
+    border: 0;
+    box-shadow: inset 0 0 0 2px #88A6A4;
+    color: #88A6A4 /*!important*/;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0.8em;
+    font-weight: 900;
+    height: 3.5em;
+    letter-spacing: 0.35em;
+    line-height: 3.45em;
+    overflow: hidden;
+    padding: 0 1.25em 0 1.6em;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/*DETAILS*/
+#mContainer {
+    /*border: 3px solid #535ba0;*/
+    box-shadow: 20px 30px 20px 0 rgba(255, 255, 255, .075);
+    padding: 2em;
+}
+
+.detailsTitle {
+    font-family: 'Stoke', serif;
+    font-size: 3em;
+    font-weight: 700;
+}
+
+#moviePrice {
+    font-size: 2em;
+}
+
+#mContainer p {
+    margin: 0;
+}
+/*#mHeader {
+    font-size: 1.25em;
+    font-weight: 700;
+    text-align: center;
+}
+*/
+.mLeft {
+    float: left;
+    width: 36%;
+}
+
+.mRight {
+    margin-left: 1em;/*37%;*/
+}
+
+#mFooterLeft, #adminView {
+    float: left;
+    width: 49%;
+}
+
+#mFooterRight, #divCart {
+    margin-left: 50%;
+    text-align: right;
+}
+
+/* Movie Details Media Queries */
+
+/*@media screen and (max-width: 923px) {
+    .mRight {
+        margin-left: 43%;
+    }
+
+    @media screen and (max-width: 812px) {
+        .mRight {
+            margin-left: 50%;
+        }
+
+
+        @media screen and (max-width: 675px) {
+            .mRight {
+                margin-left: 50%;
+            }
+        }*/
+
+
+        /* SEARCH MOVIES */
+        .headerLeft {
+            float: left;
+            width: 49%;
+            margin-bottom: 30px;
+        }
+
+        .headerRight {
+            float: right;
+            text-align: right;
+        }
+
+        .searchBtn input.btn.btn-primary {
+            margin-left: 15px;
+        }
+
+        .pagination li {
+            margin: .5em;
+        }
+
+        /* EDIT MOVIES */
+        .editLabel {
+            margin: .5em 0 0 0;
+            font-size: 1.25em;
+        }
+
+        .editInput {
+            color: white;
+        }
+
+        /* CREATE */
+        .createBtn {
+            margin: 1em 0 0 0;
+        }
+
+        #createHeader {
+            text-align: right;
+        }
+
+        /* DELETE */
+        h1#deleteName {
+            text-transform: uppercase;
+            line-height: 1em;
+            font-size: 2.25em;
+            padding-left: 1em;
+        }
+
+        dl dt {
+            margin: 0;
+        }
+
+        input.btn.btn-default.deleteBtn {
+            margin-bottom: 2em;
+            color: red;
+            box-shadow: inset 0 0 0 2px;
+        }
+
+        /* GENRE PAGE */
+        .iconBox {
+            text-align: center;
+            margin: 1em;
+            justify-content: center;
+        }
+
+        .iconsGenre2 {
+            -webkit-filter: drop-shadow(5px 5px 5px #222);
+            filter: drop-shadow(5px 5px 5px lightgray);
+            /*filter: drop-shadow(20px 30px 20px 0 rgba(0, 0, 0, .075));*/
+        }

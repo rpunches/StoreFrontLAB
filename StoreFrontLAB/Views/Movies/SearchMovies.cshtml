@@ -1,0 +1,92 @@
+﻿@model PagedList.IPagedList<SFL.DATA.EF.Movie>
+@using PagedList.Mvc
+@using SFL.DATA.EF
+
+
+
+@{
+    ViewBag.Title = "Search Movies";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+
+@*<form action="SearchMovies" method="get">
+    <div class="headerLeft">*@
+@* form field names are used by the server, IDs are used by CSS & JS *@
+@*<input type="text" name="searchFilter" id="searchFilter" placeholder="Search Movie Title" />
+        </div>
+        <div class="searchBtn">
+            <input type="submit" value="Search" class="btn btn-primary" />
+        </div>
+    </form>*@
+@*<form action="SearchGenre" method="get">
+    <div class="headerLeft">
+        @* form field names are used by the server, IDs are used by CSS & JS *@
+@*<input type="text" name="genSearch" id="searchFilter" placeholder="Search Genre" />
+        </div>
+        <div class="searchBtn">
+            <input type="submit" value="Search Genre" class="btn btn-primary" />
+        </div>
+    </form>*@
+
+@using (Html.BeginForm("SearchMovies", "Movies", FormMethod.Get))
+{
+    <div class="headerLeft">
+        @Html.TextBox("titleSearch", ViewBag.searchFilter as string, new { placeholder = "Search Title" })
+    </div>
+    <div class="searchBtn"> <input type="submit" value="Search" class="btn btn-primary" /></div>
+}
+@Html.PagedListPager(Model, page => Url.Action("SearchMovies", new { page, currentFilter = ViewBag.CurrentFilter }))
+
+Page @(Model.PageCount < Model.PageNumber ? -1 : Model.PageNumber) of @Model.PageCount
+<br />
+<div class="row">
+    @if (Model.Count == 0)
+    {
+        <p class="alert alert-warning">
+            No results match your criteria
+        </p>
+}
+    else
+    {
+        foreach (var item in Model)
+        {
+
+            <div class="col-sm-6 col-md-4">
+                <div style="margin: .3em; padding: .1em; border-radius: 5px; min-height: 250px; max-width: fit-content;">
+                    <dl class="dl-horizontal">
+                        @*<dt>@Html.DisplayNameFor(model => item.PosterImage)</dt>*@
+                        <dd>
+                            <a href="@Url.Action("Details", new { id = item.MovieID})" title="@item.MovieTitle">
+                                <img src="~/Content/images/posters/@item.PosterImage" alt="@item.MovieTitle" id="posterPic"/>
+                            </a>
+                        </dd>
+
+                        @*<dt>@Html.DisplayNameFor(model => item.MovieTitle)</dt>*@
+                        <dd><strong>@Html.DisplayFor(modelItem => item.MovieTitle)</strong></dd>
+
+                        @*<dt>@Html.DisplayNameFor(model => item.Price)</dt>*@
+                        <dd>
+                            @Html.DisplayFor(modelItem => item.Price)
+
+                            @*@using (@Html.BeginForm("AddToCart", "Movies", FormMethod.Post, new { @class = "text-center" }))
+        {*@
+                            @*@Html.HiddenFor(x=>x.MovieID) //passing products PK value for add to cart*@
+                            @*<span class="label">Quantity</span>
+                            @Html.TextBox("Qty", 1, new { @class = "form-control", @style = "max-width: 50px; display:inline; text-align: center;" })
+                            <button type="submit" class="btn btn-primary" id="cartBtn">Add to Cart <i class="fa fa-shopping-cart"></i></button>
+                            }*@
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+
+        }
+
+    }
+</div>
+
+
+
